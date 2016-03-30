@@ -8,7 +8,7 @@ u(x,0) &= sin(x)
 \subsection{Well-posed for $\alpha>0$ and $\beta = 0$}
 We now show that the problem is well-posed in the $L_2$ -norm for for $\alpha>0$ and $\beta = 0$.
 \begin{align*}
-u_t &= \alpha u_{xx}
+u_t &= \alpha u_{xx} \\
 u(x,0) &= sin(x)
 \end{align*} 
 It is seen immediately that we now have the one dimensional heat equation. The solution to this problem is well documented and, given our initial condition, we have $u(x,t) = sin(x)e^{-at}$  
@@ -19,4 +19,21 @@ It is seen immediately that we now have the one dimensional heat equation. The s
 
 
 \subsection{Stability for $\alpha>0$ and $\beta=0$}
-We wish to derive a condition on $\Delta t$ which guarantees stability in the max norm for a scheme using central difference in time and forward Euler in space. 
+We wish to derive a condition on $\Delta t$ which guarantees stability in the max norm for a scheme using central difference in space and forward Euler in time. Our scheme is thus
+\begin{align*}
+\frac{u_j^{n+1} - u_j^n}{\Delta t}&=\alpha \frac{u_{j+1}^n -2u_j^n+u_{j-1}^n}{\Delta x^2} \\
+\implies u_j^{n+1} &= u_j^n + \frac{\alpha \Delta t}{\Delta x^2} (u_{j+1}^n -2u_j^n+u_{j-1}^n) \\
+&=  \frac{\alpha \Delta t}{\Delta x^2} (u_{j+1}^n +u_{j-1}^n) + (1-2\frac{\alpha \Delta t}{\Delta x^2})u_j^n 
+\end{align*}
+We see that for $\frac{\alpha \Delta t}{\Delta x^2} \in [0,\frac{1}{2}]$ that $u_j^{n+1}$ is a weighted average of $u_{j-1}^n,u_j^n$ and $u_{j+1}^n$ ($\frac{\alpha \Delta t}{\Delta x^2}$ weight for $u_{j+1}^n$ and $u_{j-1}^n$ and $1-2\frac{\alpha \Delta t}{\Delta x^2}$ for $u_j^n$).
+This implies that
+\begin{align}
+|u_j^{n+1}| \leq \max(|u_{j-1}^n|,|u_j^n|,|u_{j+1}^n|) \qquad \forall j \label{maxeq} \\
+\implies \max_j (|u_j^{n+1}|) \leq \max_j (|u_j^{n+1}|) \nonumber
+\end{align}
+
+We quickly note that if $\frac{\alpha \Delta t}{\Delta x^2}>\frac{1}{2}$, then it is possible to pick $u_{j-1}^n,u_j^n,u_{j+1}^n$ such that (\ref{maxeq}) is not fulfilled. Therefore are stability criterion is 
+\begin{align*}
+\frac{\alpha \Delta t}{\Delta x^2} &\leq \frac{1}{2} \\
+\Delta t &\leq \frac{\Delta x^2}{2\alpha}
+\end{align*}
