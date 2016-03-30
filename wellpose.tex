@@ -1,0 +1,22 @@
+In this section, we consider the $2\pi$-periodic Cauchy problems
+\begin{align*}
+u_t &= \alpha u_{xx} + \beta u_{xxxx} \\
+u(x,0) &= sin(x)
+\end{align*}
+
+
+\subsection{Well-posed for $\alpha>0$ and $\beta = 0$}
+We now show that the problem is well-posed in the $L_2$ -norm for for $\alpha>0$ and $\beta = 0$.
+\begin{align*}
+u_t &= \alpha u_{xx}
+u(x,0) &= sin(x)
+\end{align*} 
+It is seen immediately that we now have the one dimensional heat equation. The solution to this problem is well documented and, given our initial condition, we have $u(x,t) = sin(x)e^{-at}$  
+
+
+
+\subsection{Ill-posed for $\beta>0$}
+
+
+\subsection{Stability for $\alpha>0$ and $\beta=0$}
+We wish to derive a condition on $\Delta t$ which guarantees stability in the max norm for a scheme using central difference in time and forward Euler in space. 
