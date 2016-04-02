@@ -1,0 +1,7 @@
+epsilon=0.1;
+alpha=1;
+xSteps=200;
+Tend=10;
+[Q,x,t,cons] = adv(xSteps,ratio,Tend,alpha,epsilon);
+surf(x,t,Q)
+[Q,x,t,cons] = mccormack(xSteps,ratio,Tend,epsilon);
