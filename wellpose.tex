@@ -6,13 +6,16 @@ u(x,0) &= sin(x)
 
 
 \subsection{Well-posed for $\alpha>0$ and $\beta = 0$}
-We now show that the problem is well-posed in the $L_2$ -norm for for $\alpha>0$ and $\beta = 0$.
+We now show that the problem is well-posed in the $L_2$ -norm for for $\alpha>0$ and $\beta = 0$, i.e.
 \begin{align*}
 u_t &= \alpha u_{xx} \\
 u(x,0) &= sin(x)
 \end{align*} 
-It is seen immediately that we now have the one dimensional heat equation. The solution to this problem is well documented and, given our initial condition, we have $u(x,t) = sin(x)e^{-at}$  
-
+%It is seen immediately that we now have the one dimensional heat equation. The solution to this problem is well documented and, given our initial condition, we have $u(x,t) = sin(x)e^{-at}$  
+We assume existence. First we show uniqueness of this solution. So assume we have two solutions, $u_1$ and $u_2$. Then $u_1$ and $u_2$ satisfy
+\begin{align*}
+(u_1)_t &= \alpha (u_1)_{xx} 
+\end{align*}
 
 
 \subsection{Ill-posed for $\beta>0$}
