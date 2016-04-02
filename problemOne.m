@@ -1,5 +1,6 @@
 function [ output_args ] = problemOne( alpha, deltaT, deltaX  )
-%Forward difference in time and centeral difference in space
+%Forward difference in time and centeral difference in space 
+%Delta t must divide 2pi or code doesnt work
 start=0;
 stop=2*pi;
 Tstart=0;
