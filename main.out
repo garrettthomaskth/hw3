@@ -1,6 +1,8 @@
 \BOOKMARK [1][-]{section.1}{Well\205posedness and von Neumann analysis}{}% 1
 \BOOKMARK [2][-]{subsection.1.1}{Well-posed for >0 and = 0}{section.1}% 2
 \BOOKMARK [2][-]{subsection.1.2}{Ill-posed for >0}{section.1}% 3
-\BOOKMARK [2][-]{subsection.1.3}{Stability for >0 and =0}{section.1}% 4
-\BOOKMARK [2][-]{subsection.1.4}{Von Neumann Analysis}{section.1}% 5
-\BOOKMARK [2][-]{subsection.1.5}{Proof through Numerical Experimentation}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.3}{Max norm stability for >0 and =0}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{Max norm stability for =0}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.5}{Von Neumann Analysis for the well-posed case}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.6}{Von Neumann Analysis for the ill-posed case}{section.1}% 7
+\BOOKMARK [2][-]{subsection.1.7}{Proof through Numerical Experimentation}{section.1}% 8
