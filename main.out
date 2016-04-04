@@ -8,3 +8,4 @@
 \BOOKMARK [2][-]{subsection.1.7}{Proof through Numerical Experimentation}{section.1}% 8
 \BOOKMARK [1][-]{section.2}{Shallow water equations, dissipation and dispersion}{}% 9
 \BOOKMARK [2][-]{subsection.2.1}{Order of accuracy of the method}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.2}{Numerical solution with McCormack's scheme}{section.2}% 11
