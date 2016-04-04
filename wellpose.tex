@@ -103,7 +103,7 @@ u_j^{t+1} &= u_j^t + \alpha\frac{\Delta t}{\Delta x^2} (u_{j+1}^t-2u_j^t+u_{j-1}
 If we pose $\lambda = \alpha\frac{\Delta t}{\Delta x^2}$ and $\gamma = \beta \frac{\Delta t}{\Delta x^4}$, we have the following method : 
 $$u_j^{t+1} = (1-2\lambda+6\gamma)u_j^t + \gamma u_{j+2}^t + \gamma u_{j-2}^t + (\lambda - 4\gamma)u_{j+1}^t + (\lambda - 4\gamma)u_{j-1}^t$$
 
-We note that the sum of the coefficients is 1 so if all the coefficients are between 0 and 1, we have a weighted average and the conclusion derived for the case $\beta = 0$ holds. This is a rather complex system of inequalities. Figure \ref{reg} shows the region where $\lambda$ and $\gamma$ yield a stable method in max norm. The region is in red. Let us already note that we have a feasible region but this region depends on the value of $\alpha$ and $\beta$ so it is possible that for certain values, we cannot find a stable discretization. Furthermore, $N\Delta x=2\pi$ where $N$ must be an integer. That could also prove impossible to fulfill in the region for given values of $\alpha$ and $\beta$. Different tests will be conducted further in this report.
+We note that the sum of the coefficients is 1 so if all the coefficients are between 0 and 1, we have a weighted average and the conclusion derived for the case $\beta = 0$ holds. This is a rather complex system of inequalities. Figure \ref{reg} shows the region where $\lambda$ and $\gamma$ yield a stable method in max norm. The region is in red. The colored dots will be used for numerical experimentation. Let us already note that we have a feasible region but this region depends on the value of $\alpha$ and $\beta$ so it is possible that for certain values, we cannot find a stable discretization. Furthermore, $N\Delta x=2\pi$ where $N$ must be an integer. That could also prove impossible to fulfill in the region for given values of $\alpha$ and $\beta$. Different tests will be conducted further in this report.
 
 \begin{figure}
 \begin{center}
@@ -167,7 +167,7 @@ Dividing each side by $U^{t}e^{ikX_j}$ and using Euler's formula for the complex
 &=(1-2\lambda+6\gamma) + 2\gamma cos(2k\Delta x) + 2(\lambda - 4\gamma)cos(k\Delta x)
 \end{align*}
 
-This is a rather complex expression and it is not clear which values yield a stable method. That is why we have implemented a matlab program that computes the amplification factor for every values of $\lambda$ and $\gamma$. The code is available at the end of the report. Figure \ref{reg2} shows the results, the area in blue is stable and the one in red is not.
+This is a rather complex expression and it is not clear which values yield a stable method. That is why we have implemented a matlab program that computes the amplification factor for every values of $\lambda$ and $\gamma$. The code is available at the end of the report. Figure \ref{reg2} shows the results, the area in red is stable and the one in blue is not. The colored dots will be used for numerical experimentation.
 
 \begin{figure}
 \begin{center}
@@ -177,7 +177,7 @@ This is a rather complex expression and it is not clear which values yield a sta
 \end{center}
 \end{figure}
 
-The blue region is very similar to the one computed for the stability in max norm and the same remarks apply. So to answer the question, it is sometimes possible (provided that the given values of $\alpha$ and $\beta$ allow it) to have a stable discretization when $\beta \neq 0$. This will be checked in the next section.
+The red region is very similar to the one computed for the stability in max norm and the same remarks apply. So to answer the question, it is sometimes possible (provided that the given values of $\alpha$ and $\beta$ allow it) to have a stable discretization when $\beta \neq 0$. This will be checked in the next section.
 
 \subsection{Proof through Numerical Experimentation}
 The matlab code implementing the general scheme can be found at the end of the report and is called $diffu.m$.
@@ -197,7 +197,7 @@ Figure \ref{plot1} shows the numerical solution for different values of $\lambda
 \end{center}
 \end{figure}
 
-Let us now move to the more complex part and make tests when $\beta \neq 0$. For this part, we have tried different values inside and outside the region given in figure \ref{reg}. The four dots represents the four discretization used. Figure \ref{plot2} shows the results.
+Let us now move to the more complex part and make tests when $\beta \neq 0$. For this part, we have tried different values inside and outside the region given in figure \ref{reg} and \ref{reg2}. The four dots represents the four discretization used. Figure \ref{plot2} shows the results.
 
 \begin{figure}
 \begin{center}
@@ -212,7 +212,7 @@ $$\alpha = (2\pi)^2$$
 $$\beta = \frac{(2\pi)^4}{60000}$$
 $$\Delta t = \frac{1}{20000}$$
 
-The first plot is the blue point (see figure \ref{reg}) which is located in $\lambda = 0.5$ and $\gamma = 0.0833$ ($N=100$). That is in the stable region and the numerical solution is stable. The second plot is the black point. It is located in $\lambda = 0.72$ and $\gamma = 0.1728$ ($N=120$). It is closer to the edge but still in the stable region and the numerical solution is stable.
+The first plot is the blue point (see figure \ref{reg} or \ref{reg2}) which is located in $\lambda = 0.5$ and $\gamma = 0.0833$ ($N=100$). That is in the stable region and the numerical solution is stable. The second plot is the black point. It is located in $\lambda = 0.72$ and $\gamma = 0.1728$ ($N=120$). It is closer to the edge but still in the stable region and the numerical solution is stable.
 
 Let us now talk about the two last plots. The third (the green one) is unstable and so is the numerical solution. It is located in $\lambda = 0.7812$ and $\gamma = 0.2035$ ($N=125$). For the last one, we wanted a point that was under the region so we changed $\beta$. For the last plot, $\beta = 0.0093$. We also have $N=180$ which gives : $\lambda = 1.62$ and $\gamma = 0.3124$. The point (in pink) is not in the stable region and the numerical solution is not stable.
 
