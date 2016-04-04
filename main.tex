@@ -103,6 +103,10 @@ $\text{6}^{\text{th}}$ November 2015\\[0.2cm] %THIS IS THE DATE
 \section{Shallow water equations, dissipation and dispersion}
 In this section, we will further analyze the shallow water equations, already discussed in homework 2. 
 
+Here, we will use the Lax-Wendroff as well as the  McCormack's method defined by :
+$$u_j^* = u_j^n - \frac{\Delta t}{\Delta x} (f(u_{j+1}^n)-f(u_j^n))$$
+$$u_j^{n+1} = \frac{1}{2}(u_j^n+u_j^*) - \frac{\Delta t}{2\Delta x}(f(u_j^*)-f(u_{j-1}^*))$$
+
 \input{accu.tex}
 
 \input{macCo.tex}
