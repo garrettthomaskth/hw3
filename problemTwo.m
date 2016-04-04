@@ -45,7 +45,7 @@ xlabel('Time (s)')
 ylabel('Length (m)')
 figure(2)
 ratio=0.2;
-[Q,x,t,cons] = mccormack(xSteps,ratio,Tend,epsilon);
+[Q,x,t,cons] = mccormack(200,ratio,Tend,epsilon);
 mesh(t,x,Q)
 title('McCormack Method with \Delta t/\Delta x = 0.2')
 xlabel('Time (s)')
