@@ -1,1 +1,11 @@
 \subsection{Order of accuracy of the method}
+We will now try to compute the order of accuracy of McCormack's scheme. To do this, we will plug the solution of the PDE into the scheme and use Taylor's expansion. Let $u(x,t)$ be the solution of the following PDE : 
+$$u_t + (f(u))_x = 0$$
+
+Using Taylor's expansion, the left-hand side of the scheme is :
+$$u_j^{n+1} = u(x_j,t_n + \Delta t) = u(x_j,t_n) + \Delta t u_t(x_j,t_n) + \frac{\Delta t^2}{2} u_{tt}(x_j,t_n) + \frac{\Delta t^3}{6} u_{ttt}(x_j,t_n) + O(\Delta t^4)$$
+
+Let us now compute $f(u_{j+1}^n-f(u_j^n)$. Using Taylor expansion, we have :
+\begin{align*}
+f(u(x_j+\Delta x,t_n))-f(u(x_j,t_n)) &= (f(u(x_j,t_n)) + \Delta x (f
+\end{align*}
