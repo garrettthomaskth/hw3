@@ -54,7 +54,7 @@ figure(3)
 ratio=0.31;
 [Q,x,t,cons] = mccormack(200,ratio,Tend,epsilon);
 mesh(t,x,Q)
-title('McCormack Method with \Delta t/\Delta x = 0.3')
+title('McCormack Method with \Delta t/\Delta x = 0.31')
 xlabel('Time (s)')
 ylabel('Length (m)')
 figure(4)
