@@ -10,6 +10,7 @@ w = 0.4;
 dx = L/xSteps;
 dt = ratio*dx;
 tSteps = round(Tend/dt);
+
 %flux function
 f = @(u) [ u(2) , u(2)^2./u(1) + 0.5*g*u(1).^2];
 %Lax-Friedrich flux function
@@ -34,9 +35,9 @@ for i = 1:tSteps+1
         Q(j,2*i+1:2*i+2) = Q(j,2*i-1:2*i) - dt/dx * (F(j,:)-F(j-1,:));
     end
 end
-x = linspace(0,L,xSteps+1);
+x = linspace(0,L,xSteps);
 t = linspace(0,Tend,tSteps+1);
-Q = Q(1:end-1,2*(1:tSteps+1)-1);
+Q = Q(2:end-1,2*(1:tSteps+1)-1);
 cons = sum(Q(:,:))/(xSteps+1);
 end
 
