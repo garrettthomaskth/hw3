@@ -7,5 +7,6 @@ $$u_j^{n+1} = u(x_j,t_n + \Delta t) = u(x_j,t_n) + \Delta t u_t(x_j,t_n) + \frac
 
 Let us now compute $f(u_{j+1}^n-f(u_j^n)$. Using Taylor expansion, we have :
 \begin{align*}
-f(u(x_j+\Delta x,t_n))-f(u(x_j,t_n)) &= (f(u(x_j,t_n)) + \Delta x (f
+f(u(x_j+\Delta x,t_n))-f(u(x_j,t_n)) &= (f(u(x_j,t_n)) + \Delta x (f(u(x_j,t_n)))_x + \frac{\Delta x^2}{2} (f(u(x_j,t_n)))_{xx} + \frac{\Delta x^3}{6}(f(u(x_j,t_n)))_{xxx}+O(\Delta x^4)) - f(u(x_j,t_n))\\
+&=fes
 \end{align*}
